@@ -29,9 +29,15 @@ const base = import.meta.env.BASE_URL;
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href={base} aria-label="MateLogic Open Source, inicio">OpenSource <span>/ MateLogic</span></a>
+        <a class="brand" href={base} aria-label="MateLogic Open Source, inicio">
+          <img class="brand-logo" src={`${base}logo.png`} alt="Logo de MateLogic" width="34" height="34" />
+          <span class="brand-text">OpenSource <em>/ MateLogic</em></span>
+        </a>
         <nav class="site-nav" aria-label="Navegación principal">
           <a href="#proyectos">Proyectos</a>
+          <a class="services-link" href="https://mate-logic.tech/" target="_blank" rel="noreferrer">
+            Servicios <span aria-hidden="true">↗</span>
+          </a>
           <a class="github-link" href="https://github.com/Mate-Logic" target="_blank" rel="noreferrer">
             GitHub <span aria-hidden="true">↗</span>
           </a>
@@ -44,6 +50,9 @@ const base = import.meta.env.BASE_URL;
             <p class="eyebrow"><span class="pulse"></span> Proyectos open source de MateLogic</p>
             <h1 id="hero-title">Software abierto.<br /><em>Ideas compartidas.</em></h1>
             <p class="hero-text">Un espacio simple para explorar las herramientas y proyectos que construimos en público.</p>
+            <a class="hero-action" href="https://mate-logic.tech/" target="_blank" rel="noreferrer">
+              ¿Buscás software a medida? <strong>mate-logic.tech</strong> <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </section>
 
@@ -145,6 +154,9 @@ const base = import.meta.env.BASE_URL;
   .page-shell { max-width: 1440px; margin: auto; padding: 0 5.5vw; overflow: hidden; }
   .site-header { height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #c9c1c1; font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .02em; }
   .brand { display: flex; align-items: center; gap: 11px; color: #211e1e; text-decoration: none; }
+  .brand-logo { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; border: 1px solid #c9c1c1; }
+  .brand-text { display: inline-flex; align-items: baseline; gap: 4px; }
+  .brand-text em { color: #8c8282; font-style: normal; }
   .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; color: #f1ecec; background: #211e1e; font: 800 1rem 'Manrope', sans-serif; letter-spacing: -.12em; }
   .brand-mark span { font-size: .62rem; align-self: start; margin-top: 3px; }
   .brand-muted { color: #8c8282; }
@@ -157,7 +169,7 @@ const base = import.meta.env.BASE_URL;
   .pulse { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #211e1e; box-shadow: 0 0 0 4px #211e1e22; }
   h1, h2, h3, p { margin-top: 0; } h1 { margin: 25px 0 22px; font-size: clamp(3.5rem, 7vw, 6.8rem); letter-spacing: -.08em; line-height: .91; font-weight: 700; } h1 em, h2 em, .coming-card em { color: #c9f269; font-style: normal; }
   .hero-text { max-width: 530px; margin: auto; color: #6e6666; line-height: 1.7; font-size: .95rem; } .hero-text strong { color: #211e1e; font-weight: 600; }
-  .hero-action { display: inline-flex; gap: 30px; margin-top: 27px; padding: 14px 17px; color: #f1ecec; background: #211e1e; font: 500 .7rem 'DM Mono', monospace; text-decoration: none; text-transform: uppercase; transition: transform .2s; } .hero-action:hover { transform: translateY(-3px); }
+  .hero-action { display: inline-flex; gap: 10px; margin-top: 27px; padding: 14px 17px; color: #f1ecec; background: #211e1e; font: 500 .7rem 'DM Mono', monospace; text-decoration: none; text-transform: uppercase; transition: transform .2s; } .hero-action:hover { transform: translateY(-3px); }
   .hero-art { position: absolute; width: min(37vw, 450px); aspect-ratio: 1; opacity: .16; z-index: 0; }
   .hero-copy { position: relative; z-index: 1; }
   .orbit { position: absolute; border: 1px solid #211e1e; border-radius: 50%; transform: rotate(-28deg); } .orbit-one { inset: 10% 0; } .orbit-two { inset: 0 18%; transform: rotate(58deg); border-color: #211e1e; }
@@ -189,9 +201,11 @@ const base = import.meta.env.BASE_URL;
   .page-shell { max-width: 1240px; }
   .site-header { border-color: #4b4646; }
   .brand { color: #f1ecec; font: 500 .82rem 'DM Mono', monospace; letter-spacing: -.02em; }
-  .brand span { color: #b7b1b1; }
+  .brand-text { color: #f1ecec; } .brand-text em { color: #b7b1b1; }
+  .brand-logo { border-color: #4b4646; }
   .site-nav a { color: #b7b1b1; } .site-nav a:hover, .site-nav .github-link { color: #f1ecec; }
   .site-nav .github-link { border-color: #b7b1b1; }
+  .site-nav .services-link { color: #c9f269; border-bottom: 1px solid #c9f269; padding-bottom: 3px; } .site-nav .services-link:hover { color: #d7ff7a; border-color: #d7ff7a; }
   .hero { min-height: 500px; border-color: #4b4646; background: none; }
   .eyebrow { color: #b7b1b1; }
   .pulse { background: #b7b1b1; box-shadow: none; }
@@ -199,6 +213,7 @@ const base = import.meta.env.BASE_URL;
   h1 em, h2 em { color: #b7b1b1; }
   .hero-text { color: #b7b1b1; }
   .hero-text strong { color: #f1ecec; }
+  .hero-action { color: #211e1e; background: #c9f269; gap: 10px; align-items: center; } .hero-action:hover { background: #d7ff7a; }
   .directory { background: #211e1e; padding-top: 82px; }
   .section-kicker, .project-count { color: #807a7a; }
   .project-count span { color: #f1ecec; }
@@ -212,5 +227,5 @@ const base = import.meta.env.BASE_URL;
   .card-category, .repo-slug { color: #807a7a; } .card-category span { color: #b7b1b1; } .card-content p:not(.card-category) { color: #b7b1b1; } .card-footer { border-color: #4b4646; } .card-footer a { display: inline-flex; align-items: center; gap: 7px; color: #f1ecec; } .card-footer a:hover { color: #b7b1b1; } .card-footer svg { width: 15px; height: 15px; fill: currentColor; }
   .coming-card { border-style: dashed; color: #807a7a; } .plus-icon, .coming-card em { color: #b7b1b1; }
   .about { border-color: #4b4646; } .about-content p { color: #b7b1b1; } .site-footer { border-color: #4b4646; color: #807a7a; } .site-footer a { color: #b7b1b1; }
-  @media (max-width: 700px) { .page-shell { padding: 0 20px; } .site-header { height: 75px; } .site-nav a:not(.github-link) { display: none; } .hero { display: block; min-height: auto; padding: 75px 0 80px; } h1 { font-size: clamp(3.2rem, 15vw, 5rem); } .hero-art { width: 78vw; max-width: 360px; margin: 70px auto 0; } .section-heading, .toolbar, .about-content { display: block; } .project-count { margin-top: 20px; } .toolbar { margin-top: 38px; } .search-box { margin-top: 17px; width: 100%; } .project-grid { display: block; } .project-card, .coming-card, .project-card.list-featured { min-height: 280px; margin-bottom: 14px; } .site-footer { flex-wrap: wrap; } }
+  @media (max-width: 700px) { .page-shell { padding: 0 20px; } .site-header { height: 75px; } .site-nav a:not(.github-link):not(.services-link) { display: none; } .hero { display: block; min-height: auto; padding: 75px 0 80px; } h1 { font-size: clamp(3.2rem, 15vw, 5rem); } .hero-art { width: 78vw; max-width: 360px; margin: 70px auto 0; } .section-heading, .toolbar, .about-content { display: block; } .project-count { margin-top: 20px; } .toolbar { margin-top: 38px; } .search-box { margin-top: 17px; width: 100%; } .project-grid { display: block; } .project-card, .coming-card, .project-card.list-featured { min-height: 280px; margin-bottom: 14px; } .site-footer { flex-wrap: wrap; } }
 </style>
