@@ -1,12 +1,17 @@
+## Package Manager Rules
+
+- **ALWAYS use `pnpm`** (e.g. `pnpm dev`, `pnpm install`, `pnpm build`, `pnpm run <script>`).
+- **NEVER use `npm`** under any circumstances for installing dependencies or running scripts in this project.
+
 ## Development
 
 When starting the dev server, use background mode:
 
 ```
-astro dev --background
+pnpm dev --background
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Manage the background server with `pnpm astro dev stop`, `pnpm astro dev status`, and `pnpm astro dev logs`.
 
 ## Documentation
 
