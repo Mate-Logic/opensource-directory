@@ -83,7 +83,7 @@ Para publicar un nuevo proyecto, agrega un objeto al arreglo `projects` en [`src
 
 ## 📄 Licencia
 
-Este proyecto está disponible como software de código abierto. Consulta la licencia de cada proyecto dentro del directorio para más detalles.
+Este proyecto se distribuye bajo la licencia [MIT](LICENSE). Consulta la licencia de cada proyecto dentro del directorio para más detalles.
 
 ---
 
