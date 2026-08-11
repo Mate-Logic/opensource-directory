@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href={base} aria-label="MateLogic Open Source, inicio">
-          <img class="brand-logo" src={`${base}logo.png`} alt="Logo de MateLogic" width="34" height="34" />
+          <img class="brand-logo" src={`${base}logo.png`} alt="Logo de MateLogic" width="48" height="48" />
           <span class="brand-text">OpenSource <em>/ MateLogic</em></span>
         </a>
         <nav class="site-nav" aria-label="Navegación principal">
@@ -155,7 +155,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   .page-shell { max-width: 1440px; margin: auto; padding: 0 5.5vw; overflow: hidden; }
   .site-header { height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #c9c1c1; font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .02em; }
   .brand { display: flex; align-items: center; gap: 11px; color: #211e1e; text-decoration: none; }
-  .brand-logo { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; border: 1px solid #c9c1c1; }
+  .brand-logo { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; border: 1px solid #c9c1c1; }
   .brand-text { display: inline-flex; align-items: baseline; gap: 4px; }
   .brand-text em { color: #8c8282; font-style: normal; }
   .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; color: #f1ecec; background: #211e1e; font: 800 1rem 'Manrope', sans-serif; letter-spacing: -.12em; }
@@ -228,5 +228,53 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   .card-category, .repo-slug { color: #807a7a; } .card-category span { color: #b7b1b1; } .card-content p:not(.card-category) { color: #b7b1b1; } .card-footer { border-color: #4b4646; } .card-footer a { display: inline-flex; align-items: center; gap: 7px; color: #f1ecec; } .card-footer a:hover { color: #b7b1b1; } .card-footer svg { width: 15px; height: 15px; fill: currentColor; }
   .coming-card { border-style: dashed; color: #807a7a; } .plus-icon, .coming-card em { color: #b7b1b1; }
   .about { border-color: #4b4646; } .about-content p { color: #b7b1b1; } .site-footer { border-color: #4b4646; color: #807a7a; } .site-footer a { color: #b7b1b1; }
-  @media (max-width: 700px) { .page-shell { padding: 0 20px; } .site-header { height: 75px; } .site-nav a:not(.github-link):not(.services-link) { display: none; } .hero { display: block; min-height: auto; padding: 75px 0 80px; } h1 { font-size: clamp(3.2rem, 15vw, 5rem); } .hero-art { width: 78vw; max-width: 360px; margin: 70px auto 0; } .section-heading, .toolbar, .about-content { display: block; } .project-count { margin-top: 20px; } .toolbar { margin-top: 38px; } .search-box { margin-top: 17px; width: 100%; } .project-grid { display: block; } .project-card, .coming-card, .project-card.list-featured { min-height: 280px; margin-bottom: 14px; } .site-footer { flex-wrap: wrap; } }
+  @media (max-width: 700px) {
+    .page-shell { padding: 0 16px; }
+    .site-header { height: 70px; gap: 10px; }
+    .brand { gap: 8px; flex-shrink: 0; }
+    .brand-logo { width: 36px; height: 36px; border-radius: 8px; }
+    .brand-text em { display: none; }
+    .site-nav { gap: 12px; font-size: .68rem; flex-shrink: 0; }
+    .site-nav a:not(.github-link):not(.services-link) { display: none; }
+
+    .hero { display: block; min-height: auto; padding: 50px 0 55px; }
+    h1 { font-size: clamp(2.4rem, 11vw, 4.2rem); }
+    .hero-text { font-size: .88rem; }
+    .hero-action { width: 100%; box-sizing: border-box; text-align: center; justify-content: center; font-size: .64rem; padding: 13px 14px; line-height: 1.4; }
+    .hero-art { width: 78vw; max-width: 360px; margin: 60px auto 0; }
+
+    .directory { padding-top: 45px; padding-bottom: 60px; }
+    .section-heading { display: block; }
+    .project-count { margin-top: 8px; }
+
+    .toolbar { display: flex; flex-direction: column; align-items: stretch; gap: 12px; margin: 30px 0 20px; }
+    .filters { display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 6px; padding-bottom: 4px; scrollbar-width: none; }
+    .filters::-webkit-scrollbar { display: none; }
+    .filters button { flex-shrink: 0; padding: 7px 11px; font-size: .65rem; white-space: nowrap; }
+    .search-box { width: 100%; box-sizing: border-box; margin-top: 0; }
+
+    .project-grid { display: block; }
+    .project-card, .coming-card, .project-card.list-featured { min-height: auto; margin-bottom: 14px; padding: 20px 18px; }
+    .card-topline { margin-bottom: 16px; }
+    .card-content { margin: 0 0 20px; }
+    .card-content h3 { font-size: 1.35rem; margin: 8px 0 6px; }
+    .card-content p:not(.card-category) { font-size: .84rem; line-height: 1.5; }
+    
+    .card-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding-top: 14px; }
+    .repo-slug { font-size: .6rem; word-break: break-all; }
+    .card-footer a { font-size: .64rem; flex-shrink: 0; }
+
+    .coming-card { text-align: center; align-items: center; justify-content: center; padding: 32px 20px; min-height: 180px; }
+    .coming-card h3 { font-size: 1.4rem; margin: 12px 0 6px; }
+
+    .site-footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 24px 0 32px; }
+  }
+
+  @media (max-width: 380px) {
+    .site-header { height: 64px; }
+    .brand-logo { width: 32px; height: 32px; }
+    .brand-text { font-size: .75rem; }
+    .site-nav { gap: 8px; font-size: .62rem; }
+    .card-footer { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
 </style>
