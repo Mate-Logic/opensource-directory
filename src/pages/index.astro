@@ -29,10 +29,7 @@ const base = import.meta.env.BASE_URL;
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href={base} aria-label="MateLogic Open Source, inicio">
-          <span class="brand-mark">M<span>+</span></span>
-          <span>MateLogic<span class="brand-muted">/open-source</span></span>
-        </a>
+        <a class="brand" href={base} aria-label="MateLogic Open Source, inicio">OpenSource <span>/ MateLogic</span></a>
         <nav class="site-nav" aria-label="Navegación principal">
           <a href="#proyectos">Proyectos</a>
           <a href="#sobre-nosotros">Sobre nosotros</a>
@@ -45,17 +42,9 @@ const base = import.meta.env.BASE_URL;
       <main>
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="pulse"></span> Código abierto, ideas compartidas</p>
-            <h1 id="hero-title">Software que merece<br /><em>ser compartido.</em></h1>
-            <p class="hero-text">Un directorio de herramientas, experimentos y productos open source creados por <strong>MateLogic</strong>.</p>
-            <a class="hero-action" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="orbit-core"><span>M</span></div>
-            <div class="art-label label-top">BUILD IN PUBLIC</div>
-            <div class="art-label label-bottom">BUENAS IDEAS<br />NO TIENEN DUEÑO</div>
+            <p class="eyebrow"><span class="pulse"></span> Proyectos open source de MateLogic</p>
+            <h1 id="hero-title">Software abierto.<br /><em>Ideas compartidas.</em></h1>
+            <p class="hero-text">Un espacio simple para explorar las herramientas y proyectos que construimos en público.</p>
           </div>
         </section>
 
@@ -91,7 +80,7 @@ const base = import.meta.env.BASE_URL;
                 </div>
                 <div class="card-footer">
                   <span class="repo-slug">Mate-Logic / {project.slug}</span>
-                  <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Ver ${project.name} en GitHub`}>Ver repositorio <span aria-hidden="true">↗</span></a>
+                  <a href={project.href} target="_blank" rel="noreferrer" aria-label={`Ver ${project.name} en GitHub`}><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6-.03c2.3-1.56 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg> Ver en GitHub <span aria-hidden="true">↗</span></a>
                 </div>
               </article>
             ))}
@@ -193,5 +182,34 @@ const base = import.meta.env.BASE_URL;
   .card-category, .repo-slug { color: #a79e9e; } .card-category span { color: #f1ecec; } .card-content p:not(.card-category) { color: #b8b0b0; } .card-footer { border-color: #4a4444; } .card-footer a { color: #f1ecec; } .card-footer a:hover { color: #c9c1c1; }
   .plus-icon, .coming-card em { color: #f1ecec; } .coming-card { border-color: #a79e9e; color: #b8b0b0; }
   .about { border-color: #c9c1c1; } .about-content p { color: #6e6666; } .site-footer { border-color: #c9c1c1; color: #8b8080; } .site-footer a { color: #211e1e; }
+  /* OpenCode-inspired dark palette: quiet surfaces, warm grays, no decoration. */
+  :global(body) { background: #211e1e; color: #f1ecec; }
+  :global(body)::before { display: none; }
+  .page-shell { max-width: 1240px; }
+  .site-header { border-color: #4b4646; }
+  .brand { color: #f1ecec; font: 500 .82rem 'DM Mono', monospace; letter-spacing: -.02em; }
+  .brand span { color: #b7b1b1; }
+  .site-nav a { color: #b7b1b1; } .site-nav a:hover, .site-nav .github-link { color: #f1ecec; }
+  .site-nav .github-link { border-color: #b7b1b1; }
+  .hero { min-height: 500px; border-color: #4b4646; background: none; }
+  .eyebrow { color: #b7b1b1; }
+  .pulse { background: #b7b1b1; box-shadow: none; }
+  h1 { font-size: clamp(3.25rem, 7vw, 6.4rem); font-weight: 500; letter-spacing: -.09em; }
+  h1 em, h2 em { color: #b7b1b1; }
+  .hero-text { color: #b7b1b1; }
+  .hero-text strong { color: #f1ecec; }
+  .directory { background: #211e1e; padding-top: 82px; }
+  .section-kicker, .project-count { color: #807a7a; }
+  .project-count span { color: #f1ecec; }
+  .toolbar { border-color: #4b4646; }
+  .filters button { color: #b7b1b1; } .filters button:hover, .filters .list-active { color: #f1ecec; border-color: #807a7a; background: #2d2929; }
+  .search-box { border-color: #4b4646; color: #807a7a; } .search-box input { color: #f1ecec; } .search-box input::placeholder { color: #807a7a; } kbd { border-color: #4b4646; }
+  .project-card, .coming-card, .project-card.list-featured { border-color: #4b4646; background: #2b2727; }
+  .project-card:hover { border-color: #b7b1b1; transform: translateY(-2px); }
+  .project-card.list-featured { min-height: 290px; }
+  .project-icon { border-color: #807a7a; color: #f1ecec; } .status { color: #b7b1b1; } .status i { background: #b7b1b1; }
+  .card-category, .repo-slug { color: #807a7a; } .card-category span { color: #b7b1b1; } .card-content p:not(.card-category) { color: #b7b1b1; } .card-footer { border-color: #4b4646; } .card-footer a { display: inline-flex; align-items: center; gap: 7px; color: #f1ecec; } .card-footer a:hover { color: #b7b1b1; } .card-footer svg { width: 15px; height: 15px; fill: currentColor; }
+  .coming-card { border-style: dashed; color: #807a7a; } .plus-icon, .coming-card em { color: #b7b1b1; }
+  .about { border-color: #4b4646; } .about-content p { color: #b7b1b1; } .site-footer { border-color: #4b4646; color: #807a7a; } .site-footer a { color: #b7b1b1; }
   @media (max-width: 700px) { .page-shell { padding: 0 20px; } .site-header { height: 75px; } .site-nav a:not(.github-link) { display: none; } .hero { display: block; min-height: auto; padding: 75px 0 80px; } h1 { font-size: clamp(3.2rem, 15vw, 5rem); } .hero-art { width: 78vw; max-width: 360px; margin: 70px auto 0; } .section-heading, .toolbar, .about-content { display: block; } .project-count { margin-top: 20px; } .toolbar { margin-top: 38px; } .search-box { margin-top: 17px; width: 100%; } .project-grid { display: block; } .project-card, .coming-card, .project-card.list-featured { min-height: 280px; margin-bottom: 14px; } .site-footer { flex-wrap: wrap; } }
 </style>
