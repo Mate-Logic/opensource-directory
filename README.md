@@ -1,43 +1,90 @@
-# Astro Starter Kit: Minimal
+# OpenSource / MateLogic
+
+**Software abierto. Ideas compartidas.**
+
+Directorio de proyectos open source creados por [MateLogic](https://github.com/Mate-Logic). Un espacio simple y elegante para descubrir las herramientas, librerías y utilidades que construimos en público.
+
+## ✨ Características
+
+- **Directorio de proyectos** con tarjetas para cada repo publicado.
+- **Búsqueda instantánea** por nombre de proyecto (atajo con la tecla `/`).
+- **Filtros por categoría**: Web, Herramientas, CLI y Librerías.
+- **Tema oscuro** inspirado en la estética de OpenCode: superficies apagadas y grises cálidos.
+- **Diseño responsive** y accesible, con etiquetas ARIA y navegación por teclado.
+
+## 🚀 Empezando
+
+### Requisitos
+
+- [Node.js](https://nodejs.org/) `>= 22.12.0`
+- `pnpm` ([instalación](https://pnpm.io/installation))
+
+### Instalación
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Desarrollo
 
-## 🚀 Project Structure
+```sh
+pnpm dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+El servidor de desarrollo se ejecuta en `http://localhost:4321`.
+
+### Producción
+
+```sh
+pnpm build      # genera el sitio en ./dist/
+pnpm preview    # previsualiza la build localmente
+```
+
+## 📦 Comandos
+
+| Comando          | Acción                                            |
+| :--------------- | :------------------------------------------------ |
+| `pnpm install`   | Instala las dependencias                          |
+| `pnpm dev`       | Inicia el servidor de desarrollo en `localhost:4321` |
+| `pnpm build`     | Genera el sitio de producción en `./dist/`        |
+| `pnpm preview`   | Previsualiza la build localmente                  |
+| `pnpm astro ...` | Ejecuta comandos de la CLI de Astro               |
+
+## 🗂️ Estructura del proyecto
 
 ```text
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── public/               # Assets estáticos (favicon, etc.)
+└── src/
+    └── pages/
+        └── index.astro   # Página principal con el directorio
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ➕ Añadir un proyecto
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Para publicar un nuevo proyecto, agrega un objeto al arreglo `projects` en [`src/pages/index.astro`](src/pages/index.astro):
 
-Any static assets, like images, can be placed in the `public/` directory.
+```js
+{
+  name: 'Mi Proyecto',
+  slug: 'mi-proyecto',
+  description: 'Una breve descripción del proyecto.',
+  category: 'Web',        // Web | Herramientas | CLI | Librerías
+  language: 'Astro',
+  status: 'En desarrollo',
+  href: 'https://github.com/Mate-Logic/mi-proyecto',
+  featured: true,
+},
+```
 
-## 🧞 Commands
+## 🧑‍🤝‍🧑 Contribuciones
 
-All commands are run from the root of the project, from a terminal:
+¿Tienes una idea, encontraste un bug o quieres proponer un proyecto? Abre un *issue* o un *pull request*. Este es un espacio para construir en abierto: todas las contribuciones son bienvenidas.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 📄 Licencia
 
-## 👀 Want to learn more?
+Este proyecto está disponible como software de código abierto. Consulta la licencia de cada proyecto dentro del directorio para más detalles.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+Hecho con curiosidad y código abierto.
