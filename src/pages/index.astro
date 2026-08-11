@@ -50,10 +50,9 @@ const base = import.meta.env.BASE_URL;
         <section class="directory" id="proyectos" aria-labelledby="projects-title">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">01 / El directorio</p>
               <h2 id="projects-title">Nuestros proyectos</h2>
             </div>
-            <p class="project-count"><span>{projects.length.toString().padStart(2, '0')}</span> proyectos publicados</p>
+            <p class="project-count">{projects.length} {projects.length === 1 ? 'proyecto publicado' : 'proyectos publicados'}</p>
           </div>
 
           <div class="toolbar">
@@ -71,7 +70,14 @@ const base = import.meta.env.BASE_URL;
           <div class="project-grid" id="project-grid">
             {projects.map((project) => (
               <article class:list-featured={project.featured} class="project-card" data-category={project.category} data-name={project.name.toLowerCase()}>
-                <div class="card-topline"><span class="project-icon">{project.name.slice(0, 1)}</span><span class="status"><i></i>{project.status}</span></div>
+                <div class="card-topline">
+                  <span class="project-icon" aria-label={`Icono de ${project.category}`}>
+                    {project.category === 'Web' ? (
+                      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.2 2.5 3.3 5.5 3.3 9s-1.1 6.5-3.3 9c-2.2-2.5-3.3-5.5-3.3-9S9.8 5.5 12 3Z"></path></svg>
+                    ) : project.name.slice(0, 1)}
+                  </span>
+                  <span class="status"><i></i>{project.status}</span>
+                </div>
                 <div class="card-content">
                   <p class="card-category">{project.category} <span>/</span> {project.language}</p>
                   <h3>{project.name}</h3>
@@ -202,7 +208,7 @@ const base = import.meta.env.BASE_URL;
   .project-card, .coming-card, .project-card.list-featured { border-color: #4b4646; background: #2b2727; }
   .project-card:hover { border-color: #b7b1b1; transform: translateY(-2px); }
   .project-card.list-featured { min-height: 290px; }
-  .project-icon { border-color: #807a7a; color: #f1ecec; } .status { color: #b7b1b1; } .status i { background: #b7b1b1; }
+  .project-icon { border-color: #807a7a; color: #f1ecec; } .project-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; } .status { color: #b7b1b1; } .status i { background: #b7b1b1; }
   .card-category, .repo-slug { color: #807a7a; } .card-category span { color: #b7b1b1; } .card-content p:not(.card-category) { color: #b7b1b1; } .card-footer { border-color: #4b4646; } .card-footer a { display: inline-flex; align-items: center; gap: 7px; color: #f1ecec; } .card-footer a:hover { color: #b7b1b1; } .card-footer svg { width: 15px; height: 15px; fill: currentColor; }
   .coming-card { border-style: dashed; color: #807a7a; } .plus-icon, .coming-card em { color: #b7b1b1; }
   .about { border-color: #4b4646; } .about-content p { color: #b7b1b1; } .site-footer { border-color: #4b4646; color: #807a7a; } .site-footer a { color: #b7b1b1; }
