@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mate-logic.github.io',
-  base: '/opensource-directory',
+  site: 'https://opensource.mate-logic.tech',
+  base: '/',
 });
