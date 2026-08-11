@@ -4,6 +4,8 @@
 
 Directorio de proyectos open source creados por [MateLogic](https://github.com/Mate-Logic). Un espacio simple y elegante para descubrir las herramientas, librerías y utilidades que construimos en público.
 
+> ¿Buscás software a medida o servicios de desarrollo? Visitá [mate-logic.tech](https://mate-logic.tech/).
+
 ## ✨ Características
 
 - **Directorio de proyectos** con tarjetas para cada repo publicado.
