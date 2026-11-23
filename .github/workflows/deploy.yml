@@ -10,6 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# GitHub Pages solo admite un despliegue a la vez: encola en lugar de fallar.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
